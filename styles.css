@@ -321,16 +321,16 @@
     to { width: 100%; }
 }
 
-/* Media Queries for Responsiveness */
 
-@media only screen and (max-width: 1200px) {
+
+@media only screen and (max-width: 800px) {
     .intro-content {
-        font-size: 20px;
+        font-size: 12px;
         margin-right: 20px;
     }
 
     .intro-picture {
-        max-width: 350px;
+        max-width: 250px;
     }
 }
 
@@ -341,20 +341,20 @@
     }
 
     .intro-content {
-        width: 80%; /* Increase content width */
+        width: 0%; 
         margin-right: 0;
-        text-align: center; /* Center text on small screens */
+        text-align: center; 
     }
 
     .intro-picture {
-        width: 80%; /* Increase picture width */
-        max-width: 300px;
+        width: 60%; 
+        max-width: 200px;
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 600pxpx) {
     .intro-content {
-        font-size: 18px; /* Adjust font size */
+        font-size: 18px; 
     }
 
     .intro-link {
