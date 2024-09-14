@@ -219,24 +219,33 @@
 /* Second Page */
 .secondpage {
     padding-top: 10px;
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #AD88C6;
+    position: relative;
 }
 
+/* Content Container */
 .content-container {
     margin-top: 6vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    flex-wrap: wrap;
     width: 100%;
     max-width: 1200px;
     padding-bottom: 10px;
     margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Adjust padding for better separation */
+.intro-content, .intro-picture {
+    padding-bottom: 20px;
 }
 
 .intro-title {
@@ -255,18 +264,17 @@
 
 .intro-content {
     padding-top: 30px;
-    width: 100%; /* Full width on small screens */
+    width: 100%;
     max-width: 600px;
     font-size: 22px;
     font-family: "Radio Canada Big", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 600;
     color: black;
 }
 
 .intro-picture {
     margin: 0 auto;
-    width: 100%; /* Full width on small screens */
+    width: 100%;
     max-width: 400px;
     display: flex;
     justify-content: center;
@@ -288,7 +296,6 @@
 .intro-link {
     color: black;
     font-family: "Radio Canada Big", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 600;
     font-size: 20px;
     padding: 10px 20px;
@@ -307,6 +314,7 @@
     cursor: pointer;
 }
 
+/* Typing Animation */
 .typing-line {
     font-family: 'Courier New', Courier, monospace;
     white-space: nowrap;
@@ -314,6 +322,7 @@
     width: 0;
     margin: 10px 0;
     display: inline-block;
+    animation: typing 3.5s steps(40, end) forwards;
 }
 
 @keyframes typing {
@@ -321,40 +330,29 @@
     to { width: 100%; }
 }
 
-
-
-@media only screen and (max-width: 800px) {
-    .intro-content {
-        font-size: 12px;
-        margin-right: 20px;
-    }
-
-    .intro-picture {
-        max-width: 250px;
-    }
-}
-
+/* Media Queries for smaller screens */
 @media only screen and (max-width: 992px) {
     .content-container {
-        flex-direction: column; /* Stack elements on top of each other */
+        flex-direction: column;
         align-items: center;
+        padding: 20px; /* Add padding to avoid overlap */
+    }
+
+    .intro-content, .intro-picture {
+        width: 80%; /* Use 80% width to prevent crowding */
+        max-width: 500px;
+        margin-bottom: 20px;
     }
 
     .intro-content {
-        width: 0%; 
-        margin-right: 0;
-        text-align: center; 
-    }
-
-    .intro-picture {
-        width: 60%; 
-        max-width: 200px;
+        text-align: center;
     }
 }
 
-@media only screen and (max-width: 600pxpx) {
+@media only screen and (max-width: 768px) {
     .intro-content {
-        font-size: 18px; 
+        font-size: 18px;
+        margin-bottom: 20px;
     }
 
     .intro-link {
@@ -372,6 +370,7 @@
     .intro-content {
         width: 100%;
         font-size: 16px;
+        margin-bottom: 40px;
     }
 
     .intro-picture {
@@ -385,8 +384,10 @@
 
     .secondpage {
         padding-top: 0;
+        padding-bottom: 50px;
     }
 }
+
 
 
 
